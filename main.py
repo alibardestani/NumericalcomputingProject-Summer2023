@@ -7,12 +7,16 @@ from sklearn.metrics import mean_squared_error
 # Load the dataset
 data = pd.read_csv('Real estate.csv')
 
+# Display the first few rows of the dataset
+print(data.head())
+
 # Scatter plot of house age vs house price
 plt.scatter(data['X2 house age'], data['Y house price of unit area'])
 plt.xlabel('House Age')
 plt.ylabel('House Price')
 plt.title('House Age vs House Price')
 plt.show()
+
 # Prepare the data for modeling
 X = data.drop(['No', 'X1 transaction date', 'Y house price of unit area'], axis=1)
 y = data['Y house price of unit area']
